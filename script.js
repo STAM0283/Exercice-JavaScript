@@ -12,14 +12,18 @@ const field3 = document.getElementById('field3');
 const buttonSubmit = document.getElementById('buttonSubmit');
 
 
-// 3 ) Ajouter à écouteur d'évènement losque un utilisateur clique sur le bouton valider,
-// et cela en utilisant << addEventListener >> , qui est une méthode qui lie un gestionnaire
+// 3) Ajouter à écouteur d'événement lorsque un utilisateur clique sur le bouton valider,
+// et cela, en utilisant << addEventListener >> , qui est une méthode qui lie un gestionnaire
 // d'événements à un élément sans remplacer les gestionnaires d'événements existants.
 
 buttonSubmit.addEventListener('click', () => {
- // 4) On va créer des conditions ( if, else if et else) 
+// 4) On va créer des conditions ( if, else if et else) pour gérer les différentes possibilités de réponse.
+// 5) Récupérer les valeurs que les utilisateurs vont entrer dans les champs input, et cela, en utilisant le << variable.value >>
   if (movieName.value === '') {
+// 6) << style >> est utilisé pour changer le style de l'élément HTML 
+// Exemples : << style.color >> pour changer la couleur, << style.border >> pour créer une bordure.
     movieName.style.border = '2px solid red';
+// 7) La propriété << innerHTML >> définit ou renvoie le contenu HTML (HTML interne) d'un élément.
     field1.innerHTML = 'Veuillez remplir ce champ';
   } else if (directorName.value === '') {
     directorName.style.border = '2px solid red';
@@ -27,6 +31,7 @@ buttonSubmit.addEventListener('click', () => {
   } else if (releaseYear.value === '') {
     releaseYear.style.border = '2px solid red';
     field2.innerHTML = 'Veuillez remplir ce champ';
+// 8) La fonction isNaN() permet de déterminer si une valeur est NaN (Not A number)
   } else if (isNaN(releaseYear.value)) {
     releaseYear.style.border = '2px solid red';
     field2.innerHTML = 'veuillez indiquer une date(Année)';
