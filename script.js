@@ -1,3 +1,8 @@
+// 1) On  va commencer par lier les éléments << input >> , << p >> et << button >>
+// (qui ont un id unique) avec le fichier script.js, pour rendre l'application interactivité.
+// Pour ce la on va utiliser <<document.getElementById('id de l'element HTML')>>;
+// 2) << document >> représente la page HTML, plus précisément l'intérieur de la fenêtre du navigateur.
+
 const movieName = document.getElementById('movieName');
 const directorName = document.getElementById('directorName');
 const releaseYear = document.getElementById('releaseYear');
@@ -7,8 +12,12 @@ const field3 = document.getElementById('field3');
 const buttonSubmit = document.getElementById('buttonSubmit');
 
 
-buttonSubmit.addEventListener('click', () => {
+// 3 ) Ajouter à écouteur d'évènement losque un utilisateur clique sur le bouton valider,
+// et cela en utilisant << addEventListener >> , qui est une méthode qui lie un gestionnaire
+// d'événements à un élément sans remplacer les gestionnaires d'événements existants.
 
+buttonSubmit.addEventListener('click', () => {
+ // 4) On va créer des conditions ( if, else if et else) 
   if (movieName.value === '') {
     movieName.style.border = '2px solid red';
     field1.innerHTML = 'Veuillez remplir ce champ';
