@@ -1,5 +1,5 @@
-// 1) On  va commencer par lier les éléments << input >> , << p >> et << button >>
-// (qui ont un id unique) avec le fichier script.js, pour rendre l'application interactivité.
+// 1) On va commencer par lier les éléments << input >> , << p >> et << button >>
+// (qui ont un id unique) avec le fichier script.js, pour rendre l'application interactive.
 // Pour ce la on va utiliser <<document.getElementById('id de l'element HTML')>>;
 // 2) << document >> représente la page HTML, plus précisément l'intérieur de la fenêtre du navigateur.
 
@@ -12,7 +12,7 @@ const field3 = document.getElementById('field3');
 const buttonSubmit = document.getElementById('buttonSubmit');
 
 
-// 3) Ajouter à écouteur d'événement lorsque un utilisateur clique sur le bouton valider,
+// 3) Ajouter un écouteur d'événement lorsque un utilisateur clique sur le << bouton valider >>,
 // et cela, en utilisant << addEventListener >> , qui est une méthode qui lie un gestionnaire
 // d'événements à un élément sans remplacer les gestionnaires d'événements existants.
 
@@ -31,11 +31,12 @@ buttonSubmit.addEventListener('click', () => {
   } else if (releaseYear.value === '') {
     releaseYear.style.border = '2px solid red';
     field2.innerHTML = 'Veuillez remplir ce champ';
-// 8) La fonction isNaN() permet de déterminer si une valeur est NaN (Not A number)
+// 8) La fonction isNaN() permet de déterminer si une valeur est NaN (Not A number/pas un nombre)
   } else if (isNaN(releaseYear.value)) {
     releaseYear.style.border = '2px solid red';
     field2.innerHTML = 'veuillez indiquer une date(Année)';
   } else {
+// 9) << alert() >> est une fonction JavaScript native fournie avec chaque navigateur.
     alert(`The name of my favorite movie is : 
     ${movieName.value} 
     and it is written and created by : 
@@ -46,6 +47,8 @@ buttonSubmit.addEventListener('click', () => {
     field2.innerHTML = '';
     field3.innerHTML = '';
   }
+// 10) L'objet window est pris en charge par tous les navigateurs. Il représente la fenêtre du navigateur.
+// 11) on a utilisé << window.confirm >> pour exécuter des instructions losque l'utilisateur clique sur le << bouton OK >> de la << popup alert() >> 
   if (window.confirm && movieName.value !== '' && releaseYear.value !== '' && directorName.value !== '' && !isNaN(releaseYear.value)) {
     movieName.value = '';
     movieName.style.border = '';
@@ -55,3 +58,4 @@ buttonSubmit.addEventListener('click', () => {
     directorName.style.border = ''
   }
 });
+
